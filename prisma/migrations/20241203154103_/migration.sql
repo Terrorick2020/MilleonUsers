@@ -2,7 +2,7 @@
 CREATE TYPE "Sex" AS ENUM ('male', 'female');
 
 -- CreateTable
-CREATE TABLE "User" (
+CREATE TABLE "Users" (
     "id" SERIAL NOT NULL,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP(3) NOT NULL,
@@ -12,5 +12,5 @@ CREATE TABLE "User" (
     "sex" "Sex" NOT NULL,
     "problems" BOOLEAN NOT NULL DEFAULT true,
 
-    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Users_pkey" PRIMARY KEY ("id")
 );
