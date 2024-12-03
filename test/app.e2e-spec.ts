@@ -21,4 +21,22 @@ describe('AppController (e2e)', () => {
             .expect(200)
             .expect('Hello World!')
     })
+
+    it('/users/generate (GET)', () => {
+        return request(app.getHttpServer())
+            .get('/users/generate')
+            .expect(200)
+            .expect({ message: 'success' })
+    })
+
+    it('/users/problem-solving (POST)', () => {
+        return request(app.getHttpServer())
+            .post('/users/problem-solving')
+            .send({ userId: 10 })
+            .expect(201)
+            .expect({
+                count: expect.any(Number),
+                message: 'success',
+            })
+    })
 })
